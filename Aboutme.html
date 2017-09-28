@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兔小白的博客</title>
+	<base target="_blank" />
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<link rel="stylesheet" href="./css/swiper-3.4.2.min.css"><!-- swiper框架css -->
+	<link rel="stylesheet" href="./css/home.css">   <!-- 文本外部样式表css -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_385541_7xjppp1fuv01kyb9.css">
+	<script src="./js/jquery-1.11.1.js"></script>   
+	<script src="./js/bootstrap.js"></script><!-- bootstrap框架js -->
+	<script src="./js/swiper-3.4.2.jquery.min.js"></script><!-- swiper框架js -->
+	<script src="./js/home.js"></script>
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+
+</head>
+<body style="background: #f2efe9">
+	<header id="head">
+		<div class="container">
+			<img src="./img/logo.jpg" alt="">
+			<ul class="head-ul">
+				<li><a href="index.html">首页</a></li>
+				<li style="background:rgba(197,164,75,0.6)"><a href="Aboutme.html">关于我</a></li>
+				<li><a href="Catalog.html">文章</a></li>
+				<li><a href="Game.html">慢生活</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="message.html">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<header id="about-header">
+		<div class="container" style="padding-left: 120px">
+			<div class="di">
+				<div class="div-off">
+					<p>Office</p>
+				</div>
+				<ul id="ul-i" style="width: 680px">
+					<li><i class="iconfont icon-home-select-copy"></i>联系电话：(+86)13800138000</li>
+					<li><i class="iconfont icon-youxiang"></i>E-mail:1174990669@qq.com</li>
+					<li><i class="iconfont icon-dianhua"></i>个人主页：
+						<a href="http://www.wdxcn.cn">http://www.wdxcn.cn</a>
+					</li>
+					<img src="./img/04.jpg" alt="#" class="i-img">
+				</ul>
+			</div>
+		</div>
+	</header>
+	<section id="section-two">
+		<div class="container" >
+			<div class="div-p">
+				<h2>一路走来</h2><br/>
+				<p>
+					web前端、关于-天蝎座 我属于天蝎座：很多时候觉得自己对待任何事都很执着，一旦定了目标，就会不达目标不罢休， 永不退缩！
+				</p><br/>
+				<p>
+					在我认为：不管学习什么东西，一定要有属于自己的"学习方法"和善于"对事物的总结".
+				</p><br/>
+				<p>
+					俗话说的好："方向不对，努力白费！"很多人都是盲目的去学习，导致花了大量的时间， 在学习一些没有用处的东西，到头来什么都没学会，因此会打击自己的学习欲望， 也会让自己处于迷茫当中…一个优秀的传道授业者"不单单传授的是知识，更多传授的是思维和方法".
+				</p><br/>
+				<p>
+					授人以鱼不如授人以渔 其实，人的一生中都是在不断的学习，不管是技术也好，做人也罢！我觉得都应该以一颗"谦卑的心态来学习， 秉持利他之心来帮助他人。"
+				</p><br/>
+				<p>
+				 	人就得学会感恩，滴水之恩应当涌泉相报。感谢那些曾经帮助过我的人，因为有你们我才会变得如此的优秀。
+				</p><br/>
+			</div>
+		</div>
+	</section>
+	<section id="section-three" style="height:720px">
+		<div class="container">
+			<div class="Skill">
+				<h2 class="text-left">我的做品</h2>
+				<ul class="ul-one">
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+					<li><span></span><strong>Html</strong></li>
+				</ul>
+				<ul class="ul-two">
+					<li style="background: url(./img/zhi.jpg)no-repeat;background-size: 100% 100%">
+						<div class="li-div" style="width: 100%;height: 100%;"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section id="section-four" style='height:720px'>
+		<div class="container">
+			<h2>四处走走</h2>
+			<div class="div-img">
+				<ul id="wrap" class="center">
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="container">
+			<h2></h2>
+			<div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+	<script>
+        $(function () {
+            var collums = 5;//列
+            var rows = 5;//行
+            var wrap = $('#wrap');
+            var w = wrap.width() / rows;
+            var h = wrap.height() / collums;
+
+            for (var r = 0; r < rows; r++) {
+                for (var c = 0; c < collums; c++) {
+
+                    $('<li><div class="box"></div></li>').width(w).height(h)
+                            .css({
+                                'left': w * c + 'px',
+                                'top': h * r + 'px',
+                                'transform': 'scale(0.9) rotate(' + (Math.random() * 40 - 20) + 'deg) ' +
+                                'translateX(' + (30*c-60) + 'px)' +
+                                'translateY(' + (30*r-60) + 'px)'
+                            })
+                            .find('.box')
+                            .css({
+                                'background-image': 'url(images/' + (r * collums + c) + '.jpg)',
+                                'transform': 'scale(0.9)'
+                            })
+                            .end()
+                            .appendTo(wrap)
+                }
+            }
+            var change = true;
+            wrap.find('li').on('click', function () {
+                if (change == true) {
+                    var bgImg = $(this).find('div').css('background-image');
+                    var bgLeft = 0;
+                    var bgTop = 0;
+                    $('#wrap li').each(function (index) {
+                        var $this=$(this);
+                        $(this).delay(40*index).animate({"opacity":0},200, function () {
+                            $this.css({
+                                'transform': ' rotate(0deg) ' +
+                                'translateX(0)' +
+                                'translateY(0)'
+                            });
+                            $this.find('div').css({
+                                'background-image': bgImg,
+                                'background-size': 'auto',
+                                'backgroundPositionX': -bgLeft,
+                                'backgroundPositionY': -bgTop,
+                                'transform': 'scale(1)'
+                            });
+                            bgLeft += 196;
+                            if (bgLeft >= 980) {
+                                bgTop += 100;
+                                bgLeft = 0;
+                            }
+                            $this.animate({"opacity":1},300);
+                        })
+                    });
+                    change = false;
+                } else if (change == false) {
+                    $('#wrap li').each(function (index) {
+                        var c=index %collums;
+                        var r=parseInt(index/collums);
+                        var $this=$(this);
+                        $(this).delay(40*index).animate({"opacity":0},200, function () {
+                            $this.css({
+                                'transform': 'rotate(' + (Math.random() * 40 - 20) + 'deg)' +
+                                'translateX(' + (30*c-60) + 'px)' +
+                                'translateY(' + (30*r-60) + 'px)'
+                            });
+                            $this.find('div').css({
+                                'background-image': 'url(images/' + index + '.jpg)',
+                                'background-size': 'cover',
+                                'transform': 'scale(0.9)'
+                            });
+                            $this.animate({"opacity":1},200);
+                        })
+
+                    });
+                    change = true;
+                }
+            })
+        })
+    </script>
+</body>
+</html>

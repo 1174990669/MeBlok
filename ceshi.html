@@ -1,0 +1,287 @@
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+ #can{ width: 400px;height: 400px;
+ 	border: 10px solid red;
+    border-bottom: none;
+    border-radius: 50% 50% 50% 50%;}
+			
+	</style>
+</head>
+<body>
+	<div id='can'></div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ceshi</title>
+	<style>
+		p{
+			
+			width:200px;
+			height: 60px; 
+			overflow:hidden; 
+			border:1px solid #000000;
+			white-space:nowrap; 
+			text-overflow:ellipsis;
+		}
+	</style>
+</head>
+<body>
+	<p>这时候挥洒对的哈斯<br/>蒂芬花生地发挥的<br/>哈市东风科技环保这时候挥洒对的哈斯蒂芬花生地发挥的哈市东风科技环保这时候挥洒对的哈斯蒂芬花生地发挥的哈市东风科技环保
+	这时候挥洒对的哈斯蒂芬花生地发挥的哈市东风科技环保这时候挥洒对的哈斯蒂芬花生地发挥的哈市东风科技环保这时候挥洒对的哈斯蒂芬花生地发挥的哈市东风科技环保</p>
+</body>
+</html>
+
+
+<!doctype html>声明文档类型：html
+<html lang="en">
+    <head>头部
+        <meta charset="UTF-8">字符编码:utf-8国际编码
+        <meta name="Keywords" content="关键词1,关键词2">关键词
+        <meta name="Description" content="描述">描述
+        <title>canvas雨滴-玄武老师</title>网页标题
+        <style type="text/css">
+            *{
+                margin:0;
+                padding:0;
+            }
+            canvas{
+                display:block;
+                /*width:500px;
+                height:500px;*/
+                background:#000;
+            }
+        </style>
+    </head>
+    <body>身体
+        <canvas id="canvas">您的浏览器不支持绘图标签，请您更换浏览器!!</canvas>
+        <script type="text/javascript">
+            window.requestAnimFrame = (function(){
+                return window.requestAnimationFrame||
+                window.webkitRequestAnimationFrame||
+                window.mozRequestAnimationFrame||
+                function(callback){
+                    window.setTimeout(callback,1000/60);
+                }
+            })();
+            var can = document.getElementById("canvas");
+            var ctx = can.getContext("2d");//设置绘图环境
+            //获取浏览器窗口的宽高赋值给canvas画布
+            var w = can.width = window.innerWidth,
+                h = can.height = window.innerHeight;
+             
+            window.onresize = function(){
+                w = can.width = window.innerWidth,
+                h = can.height = window.innerHeight;
+            }
+ 
+            //绘制实心矩形:xy绘制的坐标起点  wh绘制的矩形宽高
+            /*ctx.fillStyle = "red";//设置画笔的颜色
+            ctx.fillRect(50,50,100,100);
+            //绘制圆形:xy圆心坐标 r半径 0-360绘制整圆 顺时针绘制
+            ctx.arc(250,250,50,0,Math.PI*2,false);
+            ctx.fill();//填充方法*/
+ 
+            //canvas动画原理
+            /*var y = 0;
+            setInterval(function(){
+                y++;
+                //ctx.clearRect(0,0,w,h);//清空画布
+                //绘制透明层
+                ctx.fillStyle = "rgba(0,0,0,0.05)";
+                ctx.fillRect(0,0,w,h);
+                //绘制矩形
+                ctx.fillStyle = "#33ffff";
+                ctx.fillRect(50,y,2,10);
+            },1000/60)*/
+ 
+            //创建雨滴类
+            function Drop(){};
+            //给雨滴类添加原型方法
+            Drop.prototype = {
+                //初始化雨滴的属性
+                init: function(){
+                    //设置雨滴的坐标位置
+                    this.x = random(0,w);
+                    this.y = 0;
+                    //console.log(this)//指代具体的实例化的雨滴对象
+                    this.vy = random(4,5);//生成一个随机的下落速度
+                    this.l = random(0.8*h,0.9*h);//下落的高度值
+                    this.r = 1;//圆形的初始半径
+                    this.vr = 1;//圆形半径增大的速度
+                    this.a = 1;//透明度初始值 1 -> 0
+                    this.va = 0.96;//透明度的变化系数
+                },
+                //绘制雨滴的方法
+                draw: function(){
+                    if (this.y > this.l)
+                    {
+                        //绘制圆形
+                        ctx.strokeStyle = "rgba(0,255,255,"+this.a+")";
+                        ctx.beginPath();//重新开始路径(相当于写字提笔找到新的位置再落笔)
+                        ctx.arc(this.x,this.y,this.r,0,Math.PI*2,false);
+                        ctx.stroke();//触笔方法 绘制线条
+                    }else{
+                        ctx.fillStyle = "#33ffff";
+                        ctx.fillRect(this.x,this.y,2,10);
+                    }
+                    //绘制完成更新坐标
+                    this.update();
+                },
+                //更新坐标的方法
+                update: function(){
+                    if (this.y<this.l)
+                    {
+                        this.y += this.vy;
+                    }else{
+                        //绘制圆形
+                        if (this.a > 0.03)
+                        {
+                            this.r += this.vr;
+                            if (this.r > 50)
+                            {
+                                //逐渐变模糊
+                                this.a *= this.va;
+                            }
+                        }else{
+                            //重新初始化雨滴属性
+                            this.init();
+                        }
+                         
+                    }
+                     
+                }
+            }
+             
+            //实例化雨滴对象
+            /*var drop = new Drop();
+            drop.init();
+            setInterval(function(){
+                //绘制透明层
+                ctx.fillStyle = "rgba(0,0,0,0.05)";
+                ctx.fillRect(0,0,w,h);
+                drop.draw();
+            },1000/60)*/
+            var drops = [];//用一个数组来存储所有的雨滴
+ 
+            for (var i=0;i<30 ;i++ )
+            {
+                setTimeout(function(){
+                    var drop = new Drop();
+                    drop.init();//初始化雨滴属性
+                    drops.push(drop);
+                },200*i)
+                 
+            }
+        //  console.log(drops)
+            /*setInterval(function(){
+                //绘制透明层
+                ctx.fillStyle = "rgba(0,0,0,0.05)";
+                ctx.fillRect(0,0,w,h);
+                for (var i=0;i<drops.length ;i++ )
+                {
+                    drops[i].draw();
+                }
+            },1000/60)*/
+            function move(){
+                ctx.fillStyle = "rgba(0,0,0,0.05)";
+                ctx.fillRect(0,0,w,h);
+                for (var i=0;i<drops.length ;i++ )
+                {
+                    drops[i].draw();
+                }
+ 
+                requestAnimFrame(move);
+            }
+            move();
+            //console.log(drop.x)
+            //随机函数
+            function random(min,max){
+                return Math.random()*(max-min) + min;//min~max之间的随机数
+            }
+        </script>
+ 
+        大企业项目开发流程
+            1 接到项目(如果是自己公司 那就是有个项目的想法)
+            2 产品对接(产品调研 为什么要做 做了是干什么)
+            3 准备资源(人力 物力)
+            4 成立项目组(负责人)
+            5 设计(需求文档 原型图)
+            6 美工设计图纸(反复需求对接)   架构师设计数据库 技术选取
+            7 业务分解(前端写页面及数据交互 后台提供数据接口 开发后台管理器)
+            8 业务对接(项目整合)
+            9 测试回归
+            10  提交产品部验收(客户)
+            11  运维
+    </body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+
+	
+		function jc(n) {  
+			var m = 1; 
+		for(vari=1;i<=n;i++) {  m = m*i; } 
+		return m; 
+	console.log(m)
+		}
+
+
+		/*var sum = 0;  
+		for(i=1;i<=100;i++){   
+			sum += i; 
+			// console.log(sum)
+			// alert(sum)
+			console.log(sum)
+		}*/
+
+	</script>
+</head>
+<body>
+	<p>这是p</p>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			position: absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50%,-50%);
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h>这是h</h>
+		<p>你好呀</p>
+		<a href="#" title="这是a">介绍的开放接口</a>
+
+	</div>
+</body>
+</html> -->

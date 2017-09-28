@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兔小白的博客</title>
+	<base target="_blank" />
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<link rel="stylesheet" href="./css/home.css">   <!-- 文本外部样式表css -->
+	<script src="./js/jquery-1.11.1.js"></script>   
+	<script src="./js/bootstrap.js"></script><!-- bootstrap框架js -->
+	<script src="./js/home.js"></script>
+	<script src="./js/canvas.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<header id="head"> 
+		<div class="container">
+			<img src="./img/logo.jpg" alt="">
+			<ul class="head-ul">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="Aboutme.html">关于我</a></li>
+				<li style="background:rgba(197,164,75,0.6)"><a href="Catalog.html">文章</a></li>
+				<li><a href="Game.html">慢生活</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="message.html">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<p class="nav-p">
+				<span>网站首页</span>
+				<span>文章</span>
+			</p>
+		</div>
+	</section>
+	
+	<section class="section-top">
+		<div class="container">
+			<ul class="se-ul" >
+				<li>
+				</li>
+			</ul>
+			<div class="div-right">
+				<div class="left"></div>
+				<div class="div-box">
+					<ul class="ul-one">
+						<li><span>日记随笔</span></li>
+						<li><span>文摘欣赏</span></li>
+						<li><span>网络营销</span></li>
+						<li><span>程序人生</span></li>
+						<li><span>网站建设</span></li>
+						<li><span>生活感悟</span></li>
+					</ul><br/>
+					<p>&nbsp;最新<span>文章</span><span></span></p>
+					<ul class="ul-two">
+						<li>即将结束这种浑浑噩噩的轮询的生活</li>
+						<li>常见的姓氏数组phpsql数据</li>
+						<li>侮母案,是否真相？尽一份力《转》</li>
+						<li>重要通知: 多说即将关闭</li>
+						<li>ThinkPHP3.2 集成极光推送 远程调用api</li>
+						<li>fine cms 1.9 2.0 任意文件下载漏洞最新</li>
+						<li>记16年11月初-博客随笔</li>
+						<li>网站没流量？为流量提升你应该怎么做？</li>
+					</ul>
+					<p>&nbsp;点击<span id="p-span">排行</span><span></span></p>
+					<ul class="ul-three">
+						<li><span class="s-1">1</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span class="s-2">2</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span class="s-3">3</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>4</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>5</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>6</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>7</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>8</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>9</span>帝国cms常用标签调用使用方法【转】</li>
+						<li><span>10</span>帝国cms常用标签调用使用方法【转】</li>
+					</ul>
+					<p>&nbsp;延伸<span id="p-span">阅读</span><span></span></p>
+					<ul class="ul-four">
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://www.wdxcn.cn/indexy.html#">桌球小游戏</a>
+							</span>
+						</li>
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://122.112.233.12/Service.html">汽车网站</a>
+							</span>
+						</li>
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://www.wdxcn.cn/indext.html">坦克大战</a>
+							</span>
+						</li>
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://122.112.233.12">家私商城</a>
+							</span>
+						</li>
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://122.112.233.12/AboutUs.html">汽车网站</a>
+							</span>
+						</li>
+						<li>
+							<span></span>
+							<span></span>
+							<span>
+								<a href="http://www.wdxcn.cn/indext.html">坦克大战</a>
+							</span>
+						</li>
+					</ul>
+					<div>
+					    <canvas id="clock" width="250" height="250" style="border:1px dotted #000;">
+							您的浏览器不支持 HTML5 canvas 标签。
+						</canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			function getParam(id,_url){
+				var url=_url||window.document.location.href;
+				var url=url.toString();
+				var u = url.split("?");
+				var get = {};
+				if (typeof(u[1]) == "string") {
+				   u = u[1].split("&");
+				   for (var i in u) {
+				     var j = u[i].split("=");
+				     get[j[0]] = j[1];
+				   }
+				 } else {
+				   return;
+				 }
+				 return get[id];
+			}
+			var tid= getParam('tid');
+			if (!tid) {
+				tid=1
+			}
+
+			$.ajax({
+				url:'http://jsonp.smallfox.cc/module/article/type.php',//路径地址
+				type:'get',//请求方式
+				data:{
+					pt:'jsonp',
+					tid:tid,
+					page:'1',
+					aiax:'yes',
+				},
+				callback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+					if (data.code==200) {
+						// console.log(200)
+					}
+					var con = '';
+					for (var i = 0; i < data.data.length-12; i++) {
+					con += '<li>\
+								<a href="detai.html?tid=' + data.data[i].j_tid + '&aid=' +data.data[i].j_cid+ '">\
+									<h4>' + data.data[i].j_name + '</h4>\
+									<p>发布时间：' + data.data[i].j_time + '&nbsp;&nbsp;作者：' + data.data[i].j_zuozhe + '&nbsp;[<span> 日记随笔 </span>]</p>\
+									<div>\
+										<img src="' + data.data[i].j_fengmian + '" alt="图片开小差啦">\
+										<span class="span-hover"></span>\
+									</div>\
+									<p>' + data.data[i].j_jianjie + '</p>\
+									<button>阅读全文>></button>\
+								</a>\
+							</li>';
+				}
+				$('.se-ul').html(con);
+		
+				}
+			});
+			$.ajax({
+				url:'http://jsonp.smallfox.cc/module/article/type.php',
+				type:'get',
+				data:{
+					pt:'jsonp',
+					tid:tid,
+					page:'1',
+					ajax:'yes',
+				},
+				callback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+					if (data.code==200) {
+						// console.log(200)
+					}
+					var two = '';
+					for (var i = 0; i < data.data.length-12; i++){
+						two+="<li>&nbsp;\
+						<a href='detai.html?aid="+data.data[i].j_cid+'&tid='+data.data[i].j_tid+"'>"+data.data[i].j_name+"</a>\
+						</li>"
+					}
+					$('.ul-two').html(two);
+					}
+				// }
+			})
+		})
+	</script>
+</body>
+</html>

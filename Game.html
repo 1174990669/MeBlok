@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人博客模板</title>
+	<base target="_blank" />
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/home.css">   <!-- 文本外部样式表css -->
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<script src="./js/jquery-1.11.1.js"></script>   
+	<script src="./js/bootstrap.js"></script><!-- bootstrap框架js -->
+	<script src="./js/home.js"></script>
+</head>
+<body>
+	<header id="head">
+		<div class="container">
+			<img src="./img/logo.jpg" alt="">
+			<ul class="head-ul">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="Aboutme.html">关于我</a></li>
+				<li><a href="Catalog.html">文章</a></li>
+				<li style="background:rgba(197,164,75,0.6)"><a href="Game.html">慢生活</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="message.html">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<p class="nav-p">
+				<span>网站首页</span>
+				<span>慢生活</span>
+
+			</p>
+			<span class="cont-span">“慢生活”不是懒惰，放慢速度不是拖延时间，而是让我们在生活中寻找到平衡</span>
+		</div>
+	</section>
+	<section class="G-sectwo">
+		<div class="container">
+			<ul class="ul-li">
+				<li>
+					
+				</li>
+			</ul>
+		</div>
+	</section>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+	<script>
+		$(function(){
+
+			function getParam(id,_url){
+				var url=_url||window.document.location.href; 
+				var url=url.toString();
+				var u = url.split("?");
+				var get = {};
+				if (typeof(u[1]) == "string") {
+				   u = u[1].split("&");
+				   for (var i in u) {
+				     var j = u[i].split("=");
+				     get[j[0]] = j[1];
+				   }
+				 } else {
+				   return;
+				 }
+				 return get[id];
+			}
+			var tid= getParam('tid');
+			if (!tid) {
+				tid=1
+			}
+
+			$.ajax({
+				url:'http://jsonp.smallfox.cc/module/article/type.php',//路径地址
+				type:'get',//请求方式
+				data:{
+					pt:'jsonp',
+					tid:tid,
+					page:'1',
+					aiax:'yes',
+				},
+				callback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+					if (data.code==200) {
+						// console.log(200)
+					}
+					var con = '';
+					for (var i = 0; i < data.data.length; i++) {
+					con += '<li>\
+								<a href="detai.html?tid=' + data.data[i].j_tid + '&aid=' +data.data[i].j_cid+ '">\
+									<time class="time">\
+										<span>Time</span><br/>\
+										<span>' + data.data[i].j_zuozhe + '</span>\
+									</time>\
+									<div class="radius"></div>\
+									<div class="hom">\
+										<h2>'+ data.data[i].j_name +'</h2>\
+										<img src="' + data.data[i].j_fengmian + '" class="img-responsive" alt="图片开小差啦">\
+										<p>' + data.data[i].j_jianjie + '</p>\
+										<button>阅读全文>></button>\
+									</div>\
+								</a>\
+							</li>';
+
+					
+				}
+				$('.ul-li').html(con);
+		
+				}
+			});
+			$.ajax({
+				url:'http://jsonp.smallfox.cc/module/article/type.php',
+				type:'get',
+				data:{
+					pt:'jsonp',
+					tid:tid,
+					page:'1',
+					ajax:'yes',
+				},
+				callback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+					if (data.code==200) {
+						// console.log(200)
+					}
+					var two = '';
+					for (var i = 0; i < data.data.length-12; i++){
+						two+="<li>&nbsp;\
+						<a href='detai.html?aid="+data.data[i].j_cid+'&tid='+data.data[i].j_tid+"'>"+data.data[i].j_name+"</a>\
+						</li>"
+					}
+					$('.ul-two').html(two);
+					}
+				// }
+			})
+		})
+	</script>
+</body>
+</html>

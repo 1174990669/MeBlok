@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兔小白的博客</title>
+	<base target="_blank" />
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<link rel="stylesheet" href="./css/swiper-3.4.2.min.css"><!-- swiper框架css -->
+	<link rel="stylesheet" href="./css/home.css">   <!-- 文本外部样式表css -->
+	<script src="./js/jquery-1.11.1.js"></script>   
+	<script src="./js/bootstrap.js"></script><!-- bootstrap框架js -->
+	<script src="./js/swiper-3.4.2.jquery.min.js"></script><!-- swiper框架js -->
+	<script src="./js/home.js"></script>
+	<script src="./js/ajax.js"></script>
+</head>
+<body>
+	<header id="head">
+		<div class="container">
+			<img src="./img/logo.jpg" alt="图片开小差啦">
+			<ul class="head-ul">
+				<li style="background:rgba(197,164,75,0.6)"><a href="index.html">首页</a></li>
+				<li><a href="Aboutme.html">关于我</a></li>
+				<li><a href="Catalog.html">文章</a></li>
+				<li><a href="Game.html">慢生活</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="message.html">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<section id="section-one">
+		<div calss="container-fluid" id="url-img" >
+			<div class="container">
+				<p class="p-one">
+						一个人最难得的是平常心，得而不喜，<br/>
+						失而不忧，内心宁静，则幸福常在；
+							<span id="spans" style='display: none'>
+								成而不骄，败而不馁，心灵和谐，则快乐常存
+							</span>
+					<span id="sp" ><br/>
+						成而不骄，败而不馁，心灵和谐，则快乐常存
+					</span>
+				</p>
+				<div class="row">
+					<div calss="col-md-8">
+						<div class="swiper-container" id="sw1">
+						    <div class="swiper-wrapper" >
+						        <div class="swiper-slide" style="background:url(./img/a1.jpg)no-repeat;height:280px;">
+						        	<h6 class="sw-h6"> The story of a cell phone </h6>
+						        </div>
+						        <div class="swiper-slide" style="background:url(./img/a2.jpg)no-repeat;height:280px;">
+						        	<h6 class="sw-h6"> Small keyboard to knock out the  Big world  </h6>
+						        </div>
+						        <div class="swiper-slide" style="background:url(./img/a3.jpg)no-repeat;height:280px;">
+						        	<h6 class="sw-h6"> The world in mobile phones </h6>
+						        </div>
+						        <div class="swiper-slide" style="background:url(./img/a4.jpg)no-repeat;height:280px;">
+						        	<h6 class="sw-h6"> The world in computers </h6>
+						        </div>
+						    </div>
+						    <div class="swiper-pagination swiper-pagination-white" ></div>
+							<div class="swiper-scrollbar"></div>
+						</div>
+					</div>
+					<div class="col-md-4" id="div-none">
+						<div class="div-right" style="margin:30px 0 0 10px">
+							<h3>关注我</h3>
+							<ul class="ul-aimg">
+								<li>
+									<a href="#">&nbsp;&nbsp;微&nbsp;信&nbsp;&nbsp;&nbsp;</a>
+									<span></span>
+								</li>
+								<li>
+									<a href="#">新浪博客</a>
+								</li>
+								<li>
+									<a href="#">腾讯微博</a>
+								</li>
+								<li>
+									<a href="#">&nbsp;&nbsp;邮&nbsp;箱&nbsp;&nbsp;&nbsp;</a>
+								</li>
+							</ul>
+							<img src="./img/ad300x100.jpg" alt="图片开小差啦" class="li-img">
+						</div>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 10px">
+					<div class="col-md-8" style="width: 670px;padding-bottom: 80px;">
+						<div class="div-h">
+							<h4>文章推荐<span>栏目标题</span></h4>
+						</div>
+						<ul class="ul-wen">
+							<li>
+								<img id="figure-one" src="./img/01.jpg" alt="图片开小差啦">
+								<strong>住在手机里的朋友</strong>
+								<p class='strong-p'>
+									通信时代，无论是初次相见还是老友重逢，交换联系方式，常常是彼此交换名片，然后郑重或是出于礼貌用手机记下对方的电话号码。在快节奏的生活里，我们不知不觉中就成为住在别人手机里的朋友。又因某些意外，变成了别人手机里匆忙的过客，这种快餐式的友谊 ...
+								</p>
+								<p>
+									<span><a href="#">个人博客</a></span>&nbsp;
+									<span>2017/6/8</span>
+									<span class="pull-right">评论<a href="#">30</a></span>
+									<span class="pull-right">浏览<a href="#">30</a></span>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-4 col-sl-4" style="padding-left:54px">
+						<ul class="ul-right">
+							<li class="li"><a href="javascript:" class="a">点击排行</a></li>
+							<li class="li"><a href="javascript:" class="a">最新文章</a></li>
+							<li class="li"><a href="javascript:" class="a">站长推荐</a></li>
+						</ul>
+						<ul class="ul-li" style="display: none">
+							<li><a href="#">住在手机的朋友</a></li>
+							<li><a href="#">教你怎样用欠费手机拨打电话</a></li>
+							<li><a href="#">原来以为，一个人的勇敢是，删掉他的</a></li>
+							<li><a href="#">手机的16个惊人小秘密，据说99.999%</a></li>
+							<li><a href="#">你面对的是生活而不是手机</a></li>
+							<li><a href="#">豪雅手机正式发布! 在法国全手工打造的</a></li>
+						</ul>
+						<ul class="ul-li" style="display: none">
+							<li><a href="#">原来以为，一个人的勇敢是，删掉他的</a></li>
+							<li><a href="#">手机的16个惊人小秘密，据说99.999%</a></li>
+							<li><a href="#">你面对的是生活而不是手机</a></li>
+							<li><a href="#">住在手机的朋友</a></li>
+							<li><a href="#">教你怎样用欠费手机拨打电话</a></li>
+							<li><a href="#">豪雅手机正式发布! 在法国全手工打造的</a></li>
+						</ul>
+						<ul class="ul-li">
+							<li><a href="#">手机的16个惊人小秘密，据说99.999%</a></li>
+							<li><a href="#">你面对的是生活而不是手机</a></li>
+							<li><a href="#">豪雅手机正式发布! 在法国全手工打造的</a></li>
+							<li><a href="#">住在手机的朋友</a></li>
+							<li><a href="#">教你怎样用欠费手机拨打电话</a></li>
+							<li><a href="#">原来以为，一个人的勇敢是，删掉他的</a></li>
+						</ul>
+						<h3 style="margin-left:0">标签云</h3>
+						<div class="div-but">
+							<button class="btn btn-success">个人博客</button>
+							<button class="btn btn-info">Wed开发</button>
+							<button class="btn btn-warning">Html</button>
+							<button class="btn btn-info">百度</button>
+							<button class="btn btn-warning">前端设计</button>
+							<button class="btn btn-info">Css3</button>
+							<button class="btn btn-success">Html5+css3</button>
+							<button class="btn btn-primary">百度</button>
+							<button class="btn btn-success">javasript</button>
+							<button class="btn btn-warning">jquery</button>
+							<button class="btn btn-success">bootstrap</button>
+							<button class="btn btn-info">swiper</button>
+						</div>
+						<h3 style="margin-left: 0">图文推荐</h3>
+						<div calss="text-img">
+							<ul class="text-ul">
+								<li>
+									<figure class="text-fig"></figure>
+									<a href="#">住在手机里的朋友</a><br/>
+									<span class="span1">手机配件</span>
+									<span class="span2">2105-02-15</span>
+								</li>
+								<li>
+									<figure class="text-fig"></figure>
+									<a href="#">住在手机里的朋友</a><br/>
+									<span class="span1">手机配件</span>
+									<span class="span2">2105-02-15</span>
+								</li>
+								<li>
+									<figure class="text-fig"></figure>
+									<a href="#">住在手机里的朋友</a><br/>
+									<span class="span1">手机配件</span>
+									<span class="span2">2105-02-15</span>
+								</li>
+								<li>
+									<figure class="text-fig"></figure>
+									<a href="#">住在手机里的朋友</a><br/>
+									<span class="span1">手机配件</span>
+									<span class="span2">2105-02-15</span>
+								</li>
+								<li>
+									<figure class="text-fig"></figure>
+									<a href="#">住在手机里的朋友</a><br/>
+									<span class="span1">手机配件</span>
+									<span class="span2">2105-02-15</span>
+								</li>
+							</ul>
+							<div class="swi-img">
+								<div class="swiper-container swiper-container1" id="sw2">
+							        <div class="swiper-wrapper swiper-wrapper1">
+							            <div class="swiper-slide" style="background-image:url(./img/01.jpg);background-size: 100% 100%"></div>
+							            <div class="swiper-slide" style="background-image:url(./img/02.jpg);background-size: 100% 100%"></div>
+							            <div class="swiper-slide" style="background-image:url(./img/03.jpg);background-size: 100% 100%"></div>
+							            <div class="swiper-slide" style="background-image:url(./img/04.jpg);background-size: 100% 100%"></div>
+							            <div class="swiper-slide" style="background-image:url(./img/05.jpg);background-size: 100% 100%"></div>
+							        </div>
+							        <div class="swiper-pagination1"></div>
+							    </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div id="div-section" >
+		<div class="div-left">
+			<img src="./img/aa.jpg" alt="图片开小差啦" >
+		</div>
+		<div class="div-center" >
+			<p style="font-size:20px;color: white">留言板开放啦，欢迎小伙伴们留个脚印</p>
+		</div>
+		<div class="div-right">
+			<img src="./img/aa.jpg" alt="图片开小差啦" >
+		</div>
+	</div>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+
+	<script>
+		window.onblur = function() {
+		    document.title = "别离开太久了哈(●—●)";
+		};
+		window.onfocus = function() {
+		    document.title = "兔小白的博客";
+		}
+
+		var index = 10;  //文字打印效果显示
+		var str = document.getElementById("spans").innerHTML; 
+		function type() {  
+			if(index == str.length) {  
+				index = 10;  
+			}  
+			document.getElementById("sp").innerText = str.substring(0, index++);  
+		}  
+		setInterval(type, 200); //通过定时器来让文字逐步显示
+
+		var swiper1 = new Swiper('#sw1', {
+		        pagination: '.swiper-pagination',
+		        scrollbar: '.swiper-scrollbar',
+		        paginationClickable: true,
+		        parallax: true,
+		        speed: 600,
+		        loop:true,
+		        autoplay:2000,
+		    });
+
+		var swiper = new Swiper('#sw2', {
+	        pagination: '.swiper-pagination1',
+	        effect: 'cube',
+	        grabCursor: true,
+	        autoplay: 3000,
+	        loop:true,
+	        cube: {
+	            shadow: true,
+	            slideShadows: true,
+	            shadowOffset: 20,
+	            shadowScale: 0.94
+	        }
+	    });
+    </script>
+</body>
+</html>

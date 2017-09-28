@@ -1,0 +1,65 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>兔小白的博客</title>
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<link rel="stylesheet" href="./css/home.css">   <!-- 文本外部样式表css -->
+	<script src="./js/jquery-1.11.1.js"></script>   
+	<script src="./js/bootstrap.js"></script><!-- bootstrap框架js -->
+	<script src="./js/home.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<header id="head"> 
+		<div class="container">
+			<img src="./img/logo.jpg" alt="">
+			<ul class="head-ul">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="Aboutme.html">关于我</a></li>
+				<li ><a href="Catalog.html">文章</a></li>
+				<li><a href="Game.html">慢生活</a></li>
+				<li><a href="#">相册</a></li>
+				<li style="background:rgba(197,164,75,0.6)"><a href="message.html">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<p class="nav-p">
+				<span>网站首页</span>
+				<span>留言板</span>
+			</p>
+			<p class="p-hea">你，生命中最重要的过客，之所以是过客，因为你未曾为我停留。</p>
+		</div>
+	</section>
+	<section class="sec-five">
+		<div class="container">
+			<!-- <img class="img" src="./images/15.jpg" alt="图片飞走啦"> -->
+			<div id="SOHUCS" style="padding-bottom:60px;"></div>
+			<script src="https://changyan.sohu.com/upload/changyan.js" ></script>
+			<script type="text/javascript">
+				window.changyan.api.config({
+					appid: 'cytefPHk4',
+					conf: 'prod_706c1fa48ee21afe85525f11e0d1b5a3'
+				});
+			</script>
+
+		</div>
+	</section>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+	<!-- <script type="text/javascript"> 
+	(function(){ 
+	var appid = 'cytefPHk4'; 
+	var conf = 'prod_706c1fa48ee21afe85525f11e0d1b5a3'; 
+	var width = window.innerWidth || document.documentElement.clientWidth; 
+	if (width < 960) { 
+	window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); 
+	</script> -->
+</body>
+</html>

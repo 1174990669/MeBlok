@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>唯美物语</title>
+	<link rel="shortcut icon" href="./img/log.jpg" type="image/x-icon">
+	<link rel="stylesheet" href="./css/home.css">
+	<link rel="stylesheet" href="./css/bootstrap.css"><!-- bootstrap框架css -->
+	<script src="./js/jquery-1.11.1.js"></script>  
+	<script src="./js/home.js"></script> 
+	<style>
+		.head p{font-size: 20px;}
+		.head p span{color:pink;}
+		#wjianjie{padding-bottom: 80px;color:#999;}
+	</style>
+</head>
+<body>
+	<header id="head">
+		<div class="container">
+			<img src="./img/logo.jpg" alt="">
+			<ul class="head-ul">
+				<li><a href="index.html">首页</a></li>
+				<li><a href="About me.html">关于我</a></li>
+				<li><a href="Catalog.html">文章</a></li>
+				<li><a href="Game.html">游戏中心</a></li>
+				<li><a href="#">相册</a></li>
+				<li><a href="#">留言板</a></li>
+			</ul>
+		</div>
+	</header>
+	<section id="section">
+		<div class="container-fluid">
+			<div class="container">
+				<div class="head">
+					<h1 class="text-center" id="wname">这是标题</h1>
+					<p class="text-center" >作者：<span id="wzuozhe">刹那芳华</span></p>
+				</div>
+				<div id="wjianjie">
+					<!-- 文章内容 -->
+				</div>
+				<div id="SOHUCS" style="padding-bottom:60px;"></div>
+				<script src="https://changyan.sohu.com/upload/changyan.js" ></script>
+				<script type="text/javascript">
+					window.changyan.api.config({
+						appid: 'cytefPHk4',
+						conf: 'prod_706c1fa48ee21afe85525f11e0d1b5a3'
+					});
+				</script>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div calss="container-fluid">
+			<p class="text-center">兔小白博客 Design by DanceSmile 皖ICP备17021272号</p>
+		</div>
+	</footer>
+
+	<script>
+		$(function(){
+			function getParam(id,_url){
+				var url=_url||window.document.location.href;
+				var url=url.toString();
+				var u = url.split("?");
+				var get = {};
+				if (typeof(u[1]) == "string") {
+				   u = u[1].split("&");
+				   for (var i in u) {
+				     var j = u[i].split("=");
+				     get[j[0]] = j[1];
+				   }
+				 } else {
+				   return;
+				 }
+				 return get[id];
+			}
+			var tid= getParam('tid');
+			if (!tid) {
+				tid=1
+			}
+			//文章内容
+			$.ajax({
+				url:'http://jsonp.smallfox.cc/module/article/article.php',
+				type:'get',
+				data:{
+					pt:'jsonp',
+					aiax:'yes',
+					tid:getParam('tid')||1,
+					aid:getParam('aid')||1,
+				},
+				callback:'callback',
+				dataType:'jsonp',
+				success:function(data){
+					if (data.code==200) {
+						console.log(200)
+					}
+					$('#wname').html(data.data.wname);
+					$('#wzuozhe').html(data.data.wzuozhe);
+					$('#wjianjie').html(data.data.wjianjie);
+				}
+			})
+		})
+	</script>
+</body>
+</html>
